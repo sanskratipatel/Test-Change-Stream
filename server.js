@@ -2,11 +2,10 @@ const express = require("express");
 const cors = require("cors");
 
 const app = express();
-const PORT = 4000; // Listening on port 4000 for updates
+const PORT = 4000; 
 
 app.use(express.json());
 app.use(cors());
-
 // Unified route to receive change stream updates from all collections
 app.post("/updates", (req, res) => {
     const { ns, operationType } = req.body; // Extract collection name & operation type
